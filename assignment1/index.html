@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment1</title>
+</head>
+
+<body>
+  <div id="main">
+    <h1>{{ title }}</h1>
+
+    <button @click="showForm=!showForm">
+      <span v-if="showForm===true">Hide Form</span>
+      <span v-if="showForm===false">Show Form</span>
+    </button>
+
+    <form @submit.prevent="addItem()" v-if="showForm">
+      <p>ToDo Count: {{ todos.length }}</p>
+      <input type="text" v-model="inputItem">
+      <button type="submit">Submit</button>
+    </form>
+
+    <p>Current:</p>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        {{ index }}: {{ todo }}
+        <button @click="deleteItem(index)">X</button>
+      </li>
+    </ul>
+  </div>
+
+
+  <script src="vue.js"></script>
+  <script>
+    var main = new Vue({
+      el: '#main',
+      data: {
+        title: 'ToDo App',
+        inputItem: '',
+        todos: [],
+        showForm: true,
+      },
+      methods: {
+        addItem() {
+          this.todos.push(this.inputItem);
+          this.inputItem = '';
+        },
+        deleteItem(index) {
+          this.todos.splice(index, 1);
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
