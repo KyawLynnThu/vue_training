@@ -11,10 +11,10 @@
 import { mapGetters,mapActions } from 'vuex';
   export default {
     computed:{
-      ...mapGetters(['formText'])
+      ...mapGetters(['formText']) // get formText Value from store
     },
     methods:{
-      ...mapActions(['showHide'])
+      ...mapActions(['showHide']) // show or Hide form action from store
     },
   }
 </script>

@@ -20,7 +20,7 @@ export default {
     ToDoTitle, ToDoCreate, ToDoList, ShowForm
   },
   computed:{
-    ...mapGetters(['toDoLists','formText'])
+    ...mapGetters(['toDoLists','formText']) // get toDoLists & formText from Todos Module
   },
 }
 </script>

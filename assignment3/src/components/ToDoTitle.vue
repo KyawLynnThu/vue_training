@@ -8,7 +8,7 @@
 import { mapGetters } from 'vuex'
   export default {
     computed:{
-      ...mapGetters(['title'])
+      ...mapGetters(['title']) //get title from store
     },
   }
 </script>

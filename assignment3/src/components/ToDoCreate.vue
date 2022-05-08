@@ -24,9 +24,10 @@ import {  mapGetters } from 'vuex'
         this.$store.dispatch("addItem",inputItem),
         this.inputItem= '';
       }
+      //add data to toDoLists from store & clear input Value
     },
      computed:{
-      ...mapGetters(['toDoLists'])
+      ...mapGetters(['toDoLists']) // get toDoLists from store
     },
   }
 </script>
