@@ -1,15 +1,19 @@
 <template>
   <div>
     <ul>
-      <ToDoChild></ToDoChild>
+      <ToDoChild v-for="(toDoList, index) in toDoLists" :key="index" :toDoList="toDoList" :index="index" @deleteItem="deleteItem"></ToDoChild>
     </ul>
   </div>
 </template>
 
 <script>
 import ToDoChild from './ToDoChild'
+import {  mapGetters } from 'vuex'
 export default {
-    components: { ToDoChild }
+    components: { ToDoChild },
+    computed:{
+      ...mapGetters(['toDoLists']) // get toDoLists from store
+    },
   }
 </script>
 
