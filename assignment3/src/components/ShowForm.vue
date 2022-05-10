@@ -1,8 +1,8 @@
 <template>
   <div>
     <button @click="showHide">
-      <span v-if="formText===true">Hide Form</span>
-      <span v-if="formText===false">Show Form</span>
+      <span v-if="formText===true">Show Form</span>
+      <span v-if="formText===false">Hide Form</span>
     </button>
   </div>
 </template>

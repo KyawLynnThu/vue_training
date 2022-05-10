@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <ToDoChild v-for="(toDoList, index) in toDoLists" :key="index" :toDoList="toDoList" :index="index" @deleteItem="deleteItem"></ToDoChild>
+      <ToDoChild v-for="(toDoList, index) in toDoLists" :key="index" :toDoList="toDoList" :index="index"></ToDoChild>
     </ul>
   </div>
 </template>
